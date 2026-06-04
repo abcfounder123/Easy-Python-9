@@ -110,6 +110,13 @@ Data types of Python (15)
 14. memoryview()
 15. NoneTypes
 
+Python မှ သတ်မှတ်ထားသော Data types 15 မျိုး
+စာ
+နံပါတ် သုံးခု
+စာရင်း ရှစ်ခု
+အခြေအနေ တစ်ခု
+data မဟုတ်တဲ့ နှစ်ခု
+
 #################################################
 
 Creating data types by name (14)
