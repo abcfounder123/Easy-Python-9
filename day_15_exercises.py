@@ -304,6 +304,37 @@ def is_leap_year(y):
 
 ------------------------------------------
 
+11. leap year (ရက်ထပ်နှစ်) (Gregorian calendar)
+
+1. divisible by 400 ( eg. 2000, 1600 )       ( y % 400 == 0 )
+2. divisible by 4 and not divisible by 100   ( y % 4 == 0 and y % 100 != 0 )
+Rule.1 or Rule.2
+
+
+def is_leap_year(y):
+    return (y % 400 == 0) or (y % 4 == 0 and y % 100 != 0)
+
+
+------------------------------------------
+
+12. leap year (ရက်ထပ်နှစ်) Modern calendar
+
+1. divisible by 400 and not divisible by 3200  ( y % 400 == 0 and y % 3200 != 0 )
+2. divisible by 4 and not divisible by 100     ( y % 4 == 0 and y % 100 != 0 )
+  
+
+def is_leap_year(y):
+    return ( y % 400 == 0 and y % 3200 != 0 ) or ( y % 4 == 0 and y % 100 != 0)
+
+
+------------------------------------------
+
+Summary
+=> +1 days by 4 years                     <---  Julian
+=> -3 days by 400 years                   <---  Gregorian
+=> -1 days by 3200 years                  <---  Modern
+
+------------------------------------------
 
 """
 
