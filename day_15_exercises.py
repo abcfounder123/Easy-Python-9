@@ -336,5 +336,219 @@ Summary
 
 ------------------------------------------
 
+13. summation
+    => summation of 5 = 1 + 2 + 3 + 4 + 5 = 15
+
+
+def summation(n):
+    ans = 0
+    for i in range(1, n + 1):
+        ans += i
+    return ans
+    
+
+------------------------------------------
+
+14. factorial(n) (မြှောက်ဖော်ကိန်း)
+    => factorial of 5 = 1 * 2 * 3 * 4 * 5 = 120
+
+
+def factorial(n):
+    ans = 1
+    for i in range(1, n + 1):
+        ans *= i
+    return ans
+
+
+------------------------------------------
+
+15. reverse_string(s) (string ကိုနောက်ကစပြီး ပြောင်းပြန်ရေးခြင်း။) ( [::-1] )
+    - "I go to school."
+    - ".loohcs ot og I"
+
+
+def reverse_string(s):
+    return s[::-1]
+
+
+------------------------------------------
+
+16. count_vowels(s) (စာလုံးထဲက a, e, i, o, u ရေတွက်ခြင်း။)
+
+
+def count_vowels(s):
+    t = 0
+    for c in s:
+        if c in "aeiouAEIOU":
+            t += 1
+    return t
+
+
+------------------------------------------
+
+17. count_vowels(s) (စာလုံးထဲက a, e, i, o, u ဘယ်နှစ်လုံးရှိလဲရေတွက်ခြင်း။)
+
+Add item to dict
+d["I"] = 1
+
+Access dict value
+d["I"]
+
+Update dict value
+d["I"] = 2
+d["I"] += 1
+
+if c not in d:
+if c not in d.keys():
+
+------------------------------------------
+
+
+def count_vowels(s):
+    d = {}
+    for c in s:
+        if c in "aeiouAEIOU":  
+            if c not in d.keys():
+                d[c] = 1
+            else:
+                d[c] += 1
+    return d
+
+
+------------------------------------------
+
+18. sum_of_list(lst) (စာရင်းထဲက နံပါတ်တွေကို ပေါင်းခြင်း။)
+
+
+def sum_of_list(lst):
+    t = 0
+    for n in lst:
+        t += n
+    return t
+    
+
+------------------------------------------
+
+
+def sum(iterable, /, start=0):
+    '''Return the sum of a 'start' value (default: 0) plus an iterable of numbers
+
+    When the iterable is empty, return the start value.
+    This function is intended specifically for use with numeric values and may
+    reject non-numeric types.'''
+
+    t = start
+
+    for n in iterable:
+        t += n
+
+    return t
+    
+------------------------------------------
+
+19. max(lst) (အများဆုံးတန်ဖိုး ရှာခြင်း။)
+
+
+def max(l):
+    m = l[0]
+
+    for n in l[1:]:
+        m = greater_number(m, n)
+
+    return m
+
+
+------------------------------------------
+
+20. min(lst) (အနည်းဆုံးတန်ဖိုး ရှာခြင်း။)
+
+
+def min(l):
+    m = l[0]
+
+    for n in l[1:]:
+        m = less_number(m, n)
+
+    return m
+
+
+------------------------------------------
+
+21. find_max_min(lst) အများဆုံးနဲ့ အနည်းဆုံးတန်ဖိုး ရှာခြင်း။
+
+
+def find_max_min(l):
+    return (max(l), min(l))
+
+
+------------------------------------------
+
+Wrong Sample
+
+
+def find_max_min2(lst):
+    max = lst[0]
+
+    for n in lst[1:]:
+        if n > max:
+            max = n
+
+    min = lst[0]
+
+    for n in lst[1:]:
+        if n < min:
+            min = n
+
+    return max, min
+
+
+------------------------------------------    
+
+Test
+
+
+def greater_number(n1, n2):
+    if n1 > n2:
+        return n1
+    else:
+        return n2
+
+
+def less_number(n1, n2):
+    if n1 < n2:
+        return n1
+    else:
+        return n2
+
+
+def max(l):
+    m = l[0]
+
+    for n in l[1:]:
+        m = greater_number(m, n)
+
+    return m
+
+
+def min(l):
+    m = l[0]
+
+    for n in l[1:]:
+        m = less_number(m, n)
+
+    return m
+
+
+def find_max_min(l):
+    return (max(l), min(l))
+
+
+numbers = [100, 300, 200, 1000, 400, 350, 50]
+ans = find_max_min2(numbers)
+print(ans)
+
+------------------------------------------
+
+
 """
 
