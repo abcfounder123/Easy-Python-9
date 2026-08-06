@@ -549,6 +549,199 @@ print(ans)
 
 ------------------------------------------
 
+22. Lower case to upper case
+
+"a" to "A"
+
+1. ordinal number    =>  ord("a")  =>  97
+2. - 32              =>  65
+3. ord to chr        =>  chr(65)   =>  A
+
+
+def lower_upper(l):
+    return chr(ord(l) - 32)
+    
+
+------------------------------------------
+
+23. Upper case to lower case 
+
+"A" to "a" 
+
+1. ordinal number    =>  ord("A")  =>  65
+2. + 32              =>  97
+3. ord to chr        =>  chr(97)   =>  a
+
+
+def upper_lower(l):
+    return chr(ord(l) + 32)
+
+
+------------------------------------------
+
+24. upper()
+
+
+def upper(s):
+    ans = ""
+
+    for c in s:
+        if is_lower(c):
+            ans += lower_upper(c)
+        else:
+            ans += c
+
+    return ans
+
+
+------------------------------------------
+
+25. lower()
+
+
+def lower(s):
+    ans = ""
+
+    for c in s:
+        if is_upper(c):
+            ans += upper_lower(c)
+        else:
+            ans += c
+
+    return ans
+
+
+------------------------------------------
+
+Test for upper
+
+
+def is_lower(c):
+    return c in "abcdefghijklmnopqrstuvwxyz"
+
+
+def lower_upper(l):
+    return chr(ord(l) - 32)
+
+
+def upper(s):
+    ans = ""
+
+    for c in s:
+        if is_lower(c):
+            ans += lower_upper(c)
+        else:
+            ans += c
+
+    return ans
+
+
+s = "I go to school."
+
+u = upper(s)
+print(u)
+
+------------------------------------------
+
+Test for lower
+
+
+def is_upper(c):
+    return c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+def upper_lower(l):
+    return chr(ord(l) + 32)
+
+
+def lower(s):
+    ans = ""
+
+    for c in s:
+        if is_upper(c):
+            ans += upper_lower(c)
+        else:
+            ans += c
+
+    return ans
+
+
+s = "I go to school."
+u = lower(s)
+print(u)
+
+------------------------------------------
+
+26. Linear search
+
+
+def linear_search(l, element):
+    for e in l:
+        if e == element:
+            return True
+    return False
+
+
+------------------------------------------
+
+27. Binary search
+
+
+[31, 42, 68, 80, 100, 150, 200]
+
+element = 300
+
+1. m = 80 
+2. g => R = [100, 150, 200] 
+
+1. m = 150
+2. g => R = [200] 
+
+1. m = 200
+2. g => R => []
+
+------------------------------------------ 
+
+Greater =>  right  => [m+1:]  => [100, 150, 200]
+Less    =>  left   => [:m]    => [31, 42, 68]
+
+found = stop True 
+empty = stop False
+
+------------------------------------------
+
+
+def binary_search(l, element):
+    while len(l) > 0:
+        t = len(l)
+        m = t // 2
+        middle_value = l[m]
+
+        if element == middle_value:
+            return True
+
+        elif element > middle_value:
+            l = l[m+1:]
+
+        elif element < middle_value:
+            l = l[:m]
+    return False
+  
+  
+------------------------------------------ 
+
+Linear search Vs Binary search 
+
+1 million elements
+# binary =>  1 sec to 20 sec
+# linear =>  1 sec to 1 million sec
+
+100 elements
+# binary =>  1 sec to 6 sec
+# linear =>  1 sec to 100 sec
+
+------------------------------------------------------------------------------------ 
+
 
 """
 
